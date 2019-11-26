@@ -1,0 +1,8 @@
+      *ceci est le 1er exercice
+       PROCEDURE DIVISION.
+           MOVE A TO B
+       IDENTIFICATION DIVISION
+       PROGRAM-ID. Exo1
+       ENVIRONMENT DIVISION
+       DATA DIVISION
+       WORKING-STORAGE SECTION.

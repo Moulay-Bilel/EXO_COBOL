@@ -1,0 +1,33 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. tableaux.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+
+
+       77  RAYON PIC 99V99.
+       77  PERIMETRE PIC 999V99.
+       77  SURFACE PIC  999V99.
+       77  PI PIC 999V99 VALUE 3.14.
+       77  FONCTION PIC X.
+
+
+       PROCEDURE DIVISION.
+
+
+           DISPLAY 'QUEL EST LE RAYON DU CERCLE'
+           ACCEPT RAYON
+           DISPLAY ' QUEL EST LA FONCTION S OU P '
+           ACCEPT FONCTION
+
+           IF FONCTION = 'S' THEN
+              COMPUTE SURFACE = PI * RAYON ** 2
+              DISPLAY SURFACE
+           ELSE
+               COMPUTE PERIMETRE = PI * 2 * RAYON
+               DISPLAY PERIMETRE
+           END-IF.
+
+
+       END PROGRAM tableaux.
