@@ -1,0 +1,34 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. EXO11.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  CALCUL.
+           10 RESULTAT PIC 9999V99 VALUE 0.
+           10 RAYON PIC 9999V99 VALUE 0.
+           10 CHOIX PIC X VALUE ' '.
+
+
+
+       PROCEDURE DIVISION.
+
+           DISPLAY 'QUEL EST LE RAYON DU CERCLE'
+           ACCEPT RAYON
+           DISPLAY 'FAITE VOTRE CHOIX '
+           ACCEPT CHOIX.
+           CALL 'SPRO01' USING CALCUL
+           DISPLAY RESULTAT.
+
+           STOP RUN.
+
+
+
+
+
+
+
+
+
+
+
+       END PROGRAM EXO11.

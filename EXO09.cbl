@@ -5,11 +5,14 @@
 
        FILE-CONTROL.
            SELECT fichier
-               ASSIGN TO 'C:\Users\CRM\Desktop\fichier.txt'.
+               ASSIGN TO
+               'C:\Users\CRM\Desktop\FICHIER EXO COBOL\fichier.txt'.
            SELECT CLIH
-               ASSIGN TO 'C:\Users\CRM\Desktop\CLIH.txt'.
+               ASSIGN TO
+               'C:\Users\CRM\Desktop\FICHIER EXO COBOL\CLIH.txt'.
            SELECT CLIF
-               ASSIGN TO 'C:\Users\CRM\Desktop\CLIF.txt'.
+               ASSIGN TO
+               'C:\Users\CRM\Desktop\FICHIER EXO COBOL\CLIF.txt'.
 
        DATA DIVISION.
        FILE SECTION.
@@ -37,18 +40,29 @@
        77  COMPTEURA PIC 99.
 
        PROCEDURE DIVISION.
+
+       MAIN-PROCEDURE.
+           PERFORM INIT
+           PERFORM CALCUL UNTIL EOF-PAGE = 1
+           PERFORM FIN
+           STOP RUN.
+
+       INIT.
+
            OPEN INPUT fichier
            OPEN OUTPUT CLIH CLIF
            READ fichier
                AT END MOVE 1 TO EOF-PAGE
-           END-READ
+           END-READ.
 
-           PERFORM CALCUL UNTIL EOF-PAGE = 1
+
+       TRAIT.
            DISPLAY COMPTEURH
            DISPLAY COMPTEURF
            DISPLAY COMPTEURA
            CLOSE fichier CLIH CLIF
            STOP RUN.
+       FIN.
 
        CALCUL.
            IF SEXE = 'H' THEN
@@ -72,13 +86,5 @@
            READ fichier
                AT END MOVE 1 TO EOF-PAGE
            END-READ.
-
-
-
-
-
-
-
-
 
        END PROGRAM EXO09.
