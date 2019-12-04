@@ -12,7 +12,10 @@
                'C:\Users\CRM\Desktop\FICHIER EXO COBOL\NomT.txt'.
            SELECT FichierTri
                ASSIGN TO
-               'C:\Users\CRM\Desktop\FICHIER EXO COBOL\fichierTri.txt'.
+               'C:\Users\CRM\Desktop\FICHIER EXO COBOL\FichierTri.txt'.
+
+
+
 
        DATA DIVISION.
        FILE SECTION.
@@ -28,8 +31,9 @@
            02 NOM2 PIC X(20).
 
 
+
        SD  FichierTri.
-       01  enreg-fichierTri.
+       01  enreg-FichierTri.
            02 NOCLI PIC 9(7).
            02 NOM3 PIC X(20).
 
@@ -37,14 +41,17 @@
 
 
 
+
        WORKING-STORAGE SECTION.
        PROCEDURE DIVISION.
-           SORT fichierTri
+           SORT FichierTri
                ASCENDING KEY NOM3
                USING Nom
                GIVING NomT.
 
 
 
+
+       FIN.
             STOP RUN.
        END PROGRAM EXOTRI.
